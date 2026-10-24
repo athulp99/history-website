@@ -1,0 +1,210 @@
+:root {
+  color-scheme: dark;
+  --ink: #f6f4ea;
+  --muted: #a9b0c5;
+  --blue: #9ee9ff;
+  --violet: #a990ff;
+  --night: #060817;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 14% 16%, rgb(56 38 116 / 42%), transparent 30rem),
+    radial-gradient(circle at 88% 74%, rgb(15 95 130 / 27%), transparent 27rem),
+    var(--night);
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+}
+
+.page-shell {
+  isolation: isolate;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100svh;
+  overflow: hidden;
+  padding: clamp(2rem, 6vw, 5.5rem);
+  position: relative;
+}
+
+.stars {
+  background-image:
+    radial-gradient(circle, rgb(255 255 255 / 82%) 0 1px, transparent 1.5px),
+    radial-gradient(circle, rgb(158 233 255 / 60%) 0 1px, transparent 1.5px),
+    radial-gradient(circle, rgb(255 255 255 / 42%) 0 1px, transparent 1.5px);
+  background-position: 0 0, 37px 61px, 12px 34px;
+  background-size: 137px 151px, 199px 181px, 89px 113px;
+  inset: 0;
+  opacity: 0.64;
+  pointer-events: none;
+  position: absolute;
+  z-index: -1;
+}
+
+.intro {
+  max-width: 38rem;
+}
+
+.eyebrow,
+.event-date,
+.scroll-cue {
+  color: var(--blue);
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.eyebrow {
+  margin: 0 0 0.9rem;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  font-family: Iowan Old Style, Baskerville, Georgia, serif;
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  letter-spacing: -0.05em;
+  line-height: 0.92;
+  margin-bottom: 1.25rem;
+}
+
+.lede {
+  color: var(--muted);
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  line-height: 1.55;
+  margin-bottom: 0;
+  max-width: 31rem;
+}
+
+.timeline-section {
+  align-self: center;
+  margin-top: 3rem;
+}
+
+.timeline {
+  display: flex;
+  justify-content: space-between;
+  min-height: 13rem;
+  padding-top: 5.15rem;
+  position: relative;
+  width: 100%;
+}
+
+.timeline-line {
+  background: linear-gradient(90deg, var(--violet), var(--blue));
+  box-shadow: 0 0 10px rgb(158 233 255 / 55%), 0 0 28px rgb(169 144 255 / 26%);
+  height: 1px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 5.5rem;
+}
+
+.timeline-event {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  position: relative;
+  width: min(30vw, 17rem);
+  z-index: 1;
+}
+
+.timeline-event--end {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.event-marker {
+  background: var(--night);
+  border: 2px solid var(--blue);
+  border-radius: 50%;
+  box-shadow: 0 0 0 5px rgb(158 233 255 / 11%), 0 0 18px rgb(158 233 255 / 70%);
+  height: 0.85rem;
+  margin: -0.4rem 0 1.55rem;
+  width: 0.85rem;
+}
+
+.timeline-event--start .event-marker {
+  border-color: var(--violet);
+  box-shadow: 0 0 0 5px rgb(169 144 255 / 11%), 0 0 18px rgb(169 144 255 / 70%);
+}
+
+.event-date {
+  margin-bottom: 0.45rem;
+}
+
+h3 {
+  font-family: Iowan Old Style, Baskerville, Georgia, serif;
+  font-size: clamp(1.4rem, 2.8vw, 2.1rem);
+  letter-spacing: -0.035em;
+  line-height: 1;
+  margin-bottom: 0;
+}
+
+.scroll-cue {
+  align-self: end;
+  color: var(--muted);
+  margin: 0;
+}
+
+.visually-hidden {
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (max-width: 540px) {
+  .page-shell {
+    padding: 2rem 1.25rem;
+  }
+
+  .timeline-section {
+    margin-top: 2rem;
+  }
+
+  .timeline {
+    min-height: 12rem;
+  }
+
+  .timeline-event {
+    width: 44%;
+  }
+
+  .event-date {
+    font-size: 0.6rem;
+    letter-spacing: 0.07em;
+  }
+
+  h3 {
+    font-size: 1.35rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+  }
+}
