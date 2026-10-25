@@ -14,57 +14,50 @@
         <p class="eyebrow">A cosmic history</p>
         <h1>History of Earth</h1>
         <p class="lede">4.54 billion years, traced from the birth of our planet to the world we know today.</p>
+        <p class="scroll-cue">Scroll to explore ↓</p>
       </header>
       <section class="timeline-section" aria-labelledby="timeline-heading">
-        <div class="timeline-heading">
-          <div>
-            <p class="eyebrow">Explore the scale</p>
-            <h2 id="timeline-heading">A logarithmic view of deep time</h2>
-          </div>
-          <div class="timeline-controls" aria-label="Timeline zoom controls">
-            <button class="zoom-button" type="button" id="zoom-out" aria-label="Zoom out">−</button>
-            <label class="zoom-readout" for="zoom-level"><span id="zoom-text">1×</span><span class="visually-hidden"> timeline zoom</span></label>
-            <input id="zoom-level" type="range" min="1" max="12" value="1" step="1" />
-            <button class="zoom-button" type="button" id="zoom-in" aria-label="Zoom in">+</button>
-          </div>
+        <h2 id="timeline-heading" class="visually-hidden">Earth history timeline</h2>
+        <div class="timeline-controls" aria-label="Timeline zoom controls">
+          <button class="zoom-button" type="button" id="zoom-out" aria-label="Zoom out">−</button>
+          <label class="zoom-readout" for="zoom-level"><span id="zoom-text">1×</span><span class="visually-hidden"> timeline zoom</span></label>
+          <input id="zoom-level" type="range" min="1" max="12" value="1" step="1" />
+          <button class="zoom-button" type="button" id="zoom-in" aria-label="Zoom in">+</button>
         </div>
-        <p class="timeline-help" id="timeline-help">Zoom to examine later eras, then scroll or drag sideways to travel through time.</p>
-        <div class="timeline-viewport" tabindex="0" aria-describedby="timeline-help">
-          <div class="timeline" id="timeline" role="img" aria-label="Logarithmic timeline of major events from Earth forming 4.54 billion years ago to the present day">
+        <div class="timeline-viewport" tabindex="0" aria-label="Zoomable Earth history timeline">
+          <div class="timeline" id="timeline">
             <div class="timeline-line" aria-hidden="true"></div>
-            <article class="timeline-event timeline-event--earth" style="--position: 0">
+            <article class="timeline-event timeline-event--earth" data-age-myr="4540">
               <div class="event-marker" aria-hidden="true"></div><div class="event-copy"><p class="event-date">4.54 billion years ago</p><h3>Earth forms</h3></div>
             </article>
-            <article class="timeline-event timeline-event--life timeline-event--top" style="--position: 2.7">
+            <article class="timeline-event timeline-event--life" data-age-myr="3500">
               <div class="event-marker" aria-hidden="true"></div><div class="event-copy"><p class="event-date">3.5 billion years ago</p><h3>First life</h3></div>
             </article>
-            <article class="timeline-event timeline-event--cambrian" style="--position: 25.2">
+            <article class="timeline-event timeline-event--cambrian" data-age-myr="541">
               <div class="event-marker" aria-hidden="true"></div><div class="event-copy"><p class="event-date">541 million years ago</p><h3>Cambrian explosion</h3></div>
             </article>
-            <article class="timeline-event timeline-event--dinosaurs" style="--position: 50.1">
+            <article class="timeline-event timeline-event--dinosaurs" data-age-myr="66">
               <div class="event-marker" aria-hidden="true"></div><div class="event-copy"><p class="event-date">66 million years ago</p><h3>Dinosaurs become extinct</h3></div>
             </article>
-            <article class="timeline-event timeline-event--ice-age timeline-event--top timeline-event--high" style="--position: 84.8">
+            <article class="timeline-event timeline-event--ice-age" data-age-myr="2.58">
               <div class="event-marker" aria-hidden="true"></div><div class="event-copy"><p class="event-date">2.58 million years ago</p><h3>Ice Age begins</h3></div>
             </article>
-            <article class="timeline-event timeline-event--humans" style="--position: 87.4">
+            <article class="timeline-event timeline-event--humans" data-age-myr="0.3">
               <div class="event-marker" aria-hidden="true"></div><div class="event-copy"><p class="event-date">300,000 years ago</p><h3>Homo sapiens emerge</h3></div>
             </article>
-            <article class="timeline-event timeline-event--cities timeline-event--top timeline-event--higher" style="--position: 99.86">
+            <article class="timeline-event timeline-event--cities" data-age-myr="0.006">
               <div class="event-marker" aria-hidden="true"></div><div class="event-copy"><p class="event-date">c. 4000 BCE</p><h3>First cities</h3></div>
             </article>
-            <article class="timeline-event timeline-event--bronze timeline-event--high" style="--position: 99.88">
+            <article class="timeline-event timeline-event--bronze" data-age-myr="0.0053">
               <div class="event-marker" aria-hidden="true"></div><div class="event-copy"><p class="event-date">c. 3300 BCE</p><h3>Bronze Age begins</h3></div>
             </article>
-            <article class="timeline-event timeline-event--present" style="--position: 100">
+            <article class="timeline-event timeline-event--present" data-age-myr="0">
               <div class="event-marker" aria-hidden="true"></div><div class="event-copy"><p class="event-date">2026</p><h3>Present day</h3></div>
             </article>
           </div>
         </div>
-        <div class="scale-caption" aria-hidden="true"><span>4.54 billion years ago</span><span>Logarithmic time scale</span><span>Today</span></div>
       </section>
-      <p class="scroll-cue">The story begins here</p>
     </main>
-    <script src="timeline.js?v=2"></script>
+    <script src="timeline.js?v=4"></script>
   </body>
 </html>
