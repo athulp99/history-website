@@ -44,5 +44,28 @@ h3 { font-family:Iowan Old Style,Baskerville,Georgia,serif; font-size:clamp(1.25
 .scale-caption span:nth-child(2) { color:var(--blue); }
 .scroll-cue { align-self:end; color:var(--muted); margin:0; }
 .visually-hidden { clip:rect(0 0 0 0); height:1px; margin:-1px; overflow:hidden; padding:0; position:absolute; white-space:nowrap; width:1px; }
-@media (max-width:620px) { .page-shell { padding:2rem 1.25rem; } .timeline-section { margin-top:2rem; } .timeline-heading { align-items:start; flex-direction:column; gap:1.2rem; } .timeline-controls { width:100%; } #zoom-level { flex:1; width:auto; } .timeline { min-height:15rem; } .event-copy { min-width:10rem; } .timeline-event--dinosaurs .event-copy { min-width:11rem; } h3 { font-size:1.2rem; } .scale-caption span:nth-child(2) { display:none; } }
+@media (max-width:620px) {
+  .page-shell { min-height:100dvh; overflow:visible; padding:1.5rem 1.25rem 2rem; }
+  h1 { font-size:clamp(3rem,15vw,4.4rem); }
+  .lede { font-size:1rem; }
+  .timeline-section { margin-top:2.5rem; }
+  .timeline-heading { align-items:start; flex-direction:column; gap:1.2rem; }
+  h2 { font-size:1.9rem; max-width:16rem; }
+  .timeline-controls { background:rgb(6 8 23 / 62%); border:1px solid rgb(158 233 255 / 16%); border-radius:1rem; padding:.6rem; width:100%; }
+  .zoom-button { height:2.75rem; width:2.75rem; }
+  #zoom-level { flex:1; width:auto; }
+  .timeline-help { font-size:.82rem; line-height:1.45; margin-bottom:1rem; }
+  .timeline-viewport { margin-inline:-1.25rem; padding:0 1.25rem; scroll-snap-type:x proximity; }
+  .timeline { min-height:22rem; }
+  .timeline-line { top:10.2rem; }
+  .timeline-event { scroll-snap-align:center; top:9.78rem; }
+  .event-copy { background:rgb(9 13 33 / 88%); border:1px solid rgb(158 233 255 / 18%); border-radius:.8rem; box-shadow:0 1rem 2rem rgb(0 0 0 / 18%); min-width:9.6rem; padding:.75rem .8rem; }
+  .event-date { font-size:.56rem; letter-spacing:.09em; margin-bottom:.35rem; }
+  h3 { font-size:1.12rem; }
+  .timeline-event--earth .event-copy { margin-top:.85rem; }
+  .timeline-event--dinosaurs .event-copy { bottom:1.05rem; min-width:10.75rem; padding:.75rem .8rem; transform:translateX(-48%); }
+  .timeline-event--present .event-copy { margin-top:.85rem; }
+  .scale-caption { display:none; }
+  .scroll-cue { display:none; }
+}
 @media (prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto !important; transition-duration:.01ms !important; } }
