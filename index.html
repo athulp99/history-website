@@ -30,13 +30,31 @@
         </div>
         <p class="timeline-help" id="timeline-help">Zoom to examine later eras, then scroll or drag sideways to travel through time.</p>
         <div class="timeline-viewport" tabindex="0" aria-describedby="timeline-help">
-          <div class="timeline" id="timeline" role="img" aria-label="Logarithmic timeline from Earth forms 4.54 billion years ago, through the extinction of non-avian dinosaurs 66 million years ago, to present day 2026">
+          <div class="timeline" id="timeline" role="img" aria-label="Logarithmic timeline of major events from Earth forming 4.54 billion years ago to the present day">
             <div class="timeline-line" aria-hidden="true"></div>
             <article class="timeline-event timeline-event--earth" style="--position: 0">
               <div class="event-marker" aria-hidden="true"></div><div class="event-copy"><p class="event-date">4.54 billion years ago</p><h3>Earth forms</h3></div>
             </article>
+            <article class="timeline-event timeline-event--life timeline-event--top" style="--position: 2.7">
+              <div class="event-marker" aria-hidden="true"></div><div class="event-copy"><p class="event-date">3.5 billion years ago</p><h3>First life</h3></div>
+            </article>
+            <article class="timeline-event timeline-event--cambrian" style="--position: 25.2">
+              <div class="event-marker" aria-hidden="true"></div><div class="event-copy"><p class="event-date">541 million years ago</p><h3>Cambrian explosion</h3></div>
+            </article>
             <article class="timeline-event timeline-event--dinosaurs" style="--position: 50.1">
               <div class="event-marker" aria-hidden="true"></div><div class="event-copy"><p class="event-date">66 million years ago</p><h3>Dinosaurs become extinct</h3></div>
+            </article>
+            <article class="timeline-event timeline-event--ice-age timeline-event--top timeline-event--high" style="--position: 84.8">
+              <div class="event-marker" aria-hidden="true"></div><div class="event-copy"><p class="event-date">2.58 million years ago</p><h3>Ice Age begins</h3></div>
+            </article>
+            <article class="timeline-event timeline-event--humans" style="--position: 87.4">
+              <div class="event-marker" aria-hidden="true"></div><div class="event-copy"><p class="event-date">300,000 years ago</p><h3>Homo sapiens emerge</h3></div>
+            </article>
+            <article class="timeline-event timeline-event--cities timeline-event--top timeline-event--higher" style="--position: 99.86">
+              <div class="event-marker" aria-hidden="true"></div><div class="event-copy"><p class="event-date">c. 4000 BCE</p><h3>First cities</h3></div>
+            </article>
+            <article class="timeline-event timeline-event--bronze timeline-event--high" style="--position: 99.88">
+              <div class="event-marker" aria-hidden="true"></div><div class="event-copy"><p class="event-date">c. 3300 BCE</p><h3>Bronze Age begins</h3></div>
             </article>
             <article class="timeline-event timeline-event--present" style="--position: 100">
               <div class="event-marker" aria-hidden="true"></div><div class="event-copy"><p class="event-date">2026</p><h3>Present day</h3></div>
@@ -47,6 +65,6 @@
       </section>
       <p class="scroll-cue">The story begins here</p>
     </main>
-    <script src="timeline.js"></script>
+    <script src="timeline.js?v=2"></script>
   </body>
 </html>

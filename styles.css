@@ -22,10 +22,10 @@ h2 { font-family:Iowan Old Style,Baskerville,Georgia,serif; font-size:clamp(1.7r
 .zoom-readout { color:var(--ink); font-family:ui-monospace,monospace; font-size:.85rem; min-width:2.3rem; text-align:center; }
 #zoom-level { accent-color:var(--blue); cursor:pointer; width:clamp(5rem,11vw,8rem); }
 .timeline-help { color:var(--muted); font-size:.9rem; margin-bottom:1.35rem; }
-.timeline-viewport { cursor:grab; overflow-x:auto; overflow-y:hidden; scrollbar-color:rgb(158 233 255 / 50%) transparent; scrollbar-width:thin; touch-action:pan-x; }
+.timeline-viewport { -webkit-overflow-scrolling:touch; cursor:grab; overflow-x:auto; overflow-y:hidden; overscroll-behavior-x:contain; scrollbar-color:rgb(158 233 255 / 50%) transparent; scrollbar-width:thin; touch-action:pan-x; }
 .timeline-viewport:focus-visible { outline:1px solid var(--blue); outline-offset:.45rem; }
 .timeline-viewport.is-dragging { cursor:grabbing; user-select:none; }
-.timeline { min-height:14rem; min-width:100%; position:relative; transition:width 220ms ease; width:100%; }
+.timeline { min-height:20rem; min-width:100%; position:relative; transition:width 220ms ease; width:100%; }
 .timeline-line { background:linear-gradient(90deg,var(--violet),var(--blue)); box-shadow:0 0 10px rgb(158 233 255 / 55%),0 0 28px rgb(169 144 255 / 26%); height:1px; left:0; position:absolute; right:0; top:7.3rem; }
 .timeline-event { display:flex; flex-direction:column; left:calc(var(--position) * 1%); position:absolute; top:6.88rem; z-index:1; }
 .event-marker { background:var(--night); border:2px solid var(--blue); border-radius:50%; box-shadow:0 0 0 5px rgb(158 233 255 / 11%),0 0 18px rgb(158 233 255 / 70%); height:.85rem; width:.85rem; }
@@ -40,6 +40,17 @@ h3 { font-family:Iowan Old Style,Baskerville,Georgia,serif; font-size:clamp(1.25
 .timeline-event--dinosaurs .event-marker { border-color:var(--amber); box-shadow:0 0 0 5px rgb(255 202 132 / 11%),0 0 18px rgb(255 202 132 / 70%); }
 .timeline-event--present { transform:translateX(-100%); text-align:right; }
 .timeline-event--present .event-copy { align-self:end; }
+.timeline-event--top { transform:translateX(-50%); }
+.timeline-event--top .event-copy { bottom:.75rem; padding-bottom:1.55rem; padding-top:0; position:absolute; text-align:center; transform:translateX(-46%); }
+.timeline-event--high .event-copy { margin-top:4.8rem; }
+.timeline-event--top.timeline-event--high .event-copy { bottom:4.3rem; }
+.timeline-event--higher .event-copy { bottom:7.6rem; }
+.timeline-event--life .event-marker { border-color:#72d7a6; box-shadow:0 0 0 5px rgb(114 215 166 / 11%),0 0 18px rgb(114 215 166 / 70%); }
+.timeline-event--cambrian .event-marker { border-color:#6bc9ff; }
+.timeline-event--ice-age .event-marker { border-color:#d7f5ff; box-shadow:0 0 0 5px rgb(215 245 255 / 11%),0 0 18px rgb(215 245 255 / 70%); }
+.timeline-event--humans .event-marker { border-color:#ffb987; box-shadow:0 0 0 5px rgb(255 185 135 / 11%),0 0 18px rgb(255 185 135 / 70%); }
+.timeline-event--cities .event-marker { border-color:#f69ba6; box-shadow:0 0 0 5px rgb(246 155 166 / 11%),0 0 18px rgb(246 155 166 / 70%); }
+.timeline-event--bronze .event-marker { border-color:#d08a45; box-shadow:0 0 0 5px rgb(208 138 69 / 11%),0 0 18px rgb(208 138 69 / 70%); }
 .scale-caption { color:var(--muted); display:flex; font-size:.59rem; justify-content:space-between; margin-top:.7rem; }
 .scale-caption span:nth-child(2) { color:var(--blue); }
 .scroll-cue { align-self:end; color:var(--muted); margin:0; }
@@ -56,14 +67,19 @@ h3 { font-family:Iowan Old Style,Baskerville,Georgia,serif; font-size:clamp(1.25
   #zoom-level { flex:1; width:auto; }
   .timeline-help { font-size:.82rem; line-height:1.45; margin-bottom:1rem; }
   .timeline-viewport { margin-inline:-1.25rem; padding:0 1.25rem; scroll-snap-type:x proximity; }
-  .timeline { min-height:22rem; }
+  .timeline { min-height:29rem; }
   .timeline-line { top:10.2rem; }
   .timeline-event { scroll-snap-align:center; top:9.78rem; }
   .event-copy { background:rgb(9 13 33 / 88%); border:1px solid rgb(158 233 255 / 18%); border-radius:.8rem; box-shadow:0 1rem 2rem rgb(0 0 0 / 18%); min-width:9.6rem; padding:.75rem .8rem; }
   .event-date { font-size:.56rem; letter-spacing:.09em; margin-bottom:.35rem; }
   h3 { font-size:1.12rem; }
   .timeline-event--earth .event-copy { margin-top:.85rem; }
-  .timeline-event--dinosaurs .event-copy { bottom:1.05rem; min-width:10.75rem; padding:.75rem .8rem; transform:translateX(-48%); }
+  .timeline-event--top .event-copy { bottom:1.05rem; min-width:10.75rem; padding:.75rem .8rem; transform:translateX(-48%); }
+  .timeline-event--life { transform:translateX(0); }
+  .timeline-event--life .event-copy { transform:translateX(0); }
+  .timeline-event--top.timeline-event--high .event-copy { bottom:5rem; }
+  .timeline-event--higher .event-copy { bottom:8.5rem; }
+  .timeline-event--high:not(.timeline-event--top) .event-copy { margin-top:5rem; }
   .timeline-event--present .event-copy { margin-top:.85rem; }
   .scale-caption { display:none; }
   .scroll-cue { display:none; }
